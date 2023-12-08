@@ -2,7 +2,7 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import locationPointerIcon from './assets/location-pointer.svg';
+import locationPointerIcon from './assets/locationPointer.png';
 
 const locationIcon = new L.Icon({
   iconUrl: locationPointerIcon,
@@ -16,6 +16,7 @@ const Monitor = () => {
 const position = [46.7304, -117.1752];
 
 return (
+  <div>
   <MapContainer center={position} zoom={17} style={{ height: '500px', width: '100%' }}>
     <TileLayer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -27,6 +28,8 @@ return (
       </Popup>
     </Marker>
   </MapContainer>
+  <button onClick={() => console.log('clicked')}>Alert</button>
+  </div>
 );
 };
 
