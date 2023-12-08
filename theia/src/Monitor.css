@@ -20,9 +20,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 40%;
+    height: 40%;
+    border: 1px solid black;
   }
   
   .end-alert-button {
     margin-top: auto; /* Pushes the "End Alert" button to the bottom */
   }
+  /* Add this CSS */
+.plain-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: default; /* Optionally, disable the cursor if you don't want it to appear clickable */
+    color: inherit; /* Inherit the text color from the parent element */
+    font: inherit; /* Inherit the font from the parent element */
+    text-decoration: none; /* Remove underline if there's any */
+  }
+  
   

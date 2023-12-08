@@ -47,8 +47,10 @@ const Monitor = () => {
         <div className="modal-container">
           <p>{modalMessage}</p>
           <div className="button-column">
-            <button>Contact Emergency</button>
-            <button>Requesting Assistance</button>
+            <div style={{ padding: '10px' }}>
+              Alert Staus
+              </div>
+              <button className="plain-button">Pending........</button>
             
           </div>
           <button onClick={handleCloseModal} className="end-alert-button">
