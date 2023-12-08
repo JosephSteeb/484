@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import locationPointerIcon from './assets/locationPointer.png';
+import './Monitor.css'; // Import the CSS file
 
 const locationIcon = new L.Icon({
   iconUrl: locationPointerIcon,
@@ -12,10 +13,10 @@ const locationIcon = new L.Icon({
 });
 
 const Monitor = () => {
-// Coordinates for Voiland College of Engineering and Architecture
-const position = [46.7304, -117.165];
+  // Coordinates for Voiland College of Engineering and Architecture
+  const position = [46.7304, -117.165];
 
-const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
 
   const handleAlertButtonClick = () => {
@@ -43,9 +44,16 @@ const [showModal, setShowModal] = useState(false);
       <button onClick={handleAlertButtonClick}>Alert</button>
 
       {showModal && (
-        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'white', padding: '20px', width: '80%', height: '70%', zIndex: 1000 }}>
+        <div className="modal-container">
           <p>{modalMessage}</p>
-          <button onClick={handleCloseModal}>Close</button>
+          <div className="button-column">
+            <button>Contact Emergency</button>
+            <button>Requesting Assistance</button>
+            
+          </div>
+          <button onClick={handleCloseModal} className="end-alert-button">
+            End Alert
+          </button>
         </div>
       )}
     </div>
